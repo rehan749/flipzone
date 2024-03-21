@@ -6,6 +6,8 @@ import './topbar.css'
 import { FaRegUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
+import Login from './Login';
+
 
 
 const Topbar = () => {
@@ -23,11 +25,12 @@ const Topbar = () => {
         <input type="text" title="Search" className='search-bar' placeholder='Search for Products, Brands and More'/>
       </div>
       <div className="col-md-4 col-lg-4 col-sm-4 text-align-sm-end top-icons">
-        <Link href="/login" className="px-3" ><FaRegUser />Login</Link>
+        <Link href="#" data-bs-toggle="modal" data-bs-target="#login" className="px-3" ><FaRegUser />Login</Link>
         <Link href="/cart" className="px-3"><FaShoppingCart />Cart</Link>
       </div>
     </div>
     
+    <Login/>
   </nav>
   )
 }
