@@ -6,7 +6,7 @@ import './topbar.css'
 import { FaRegUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
-import Login from './Login';
+import Dialogbox from './Dialogbox';
 
 
 
@@ -30,7 +30,7 @@ const Topbar = () => {
       </div>
     </div>
     
-    <Login/>
+    <Dialogbox/>
   </nav>
   )
 }
