@@ -1,12 +1,28 @@
-
-"use client"
-import React from "react";
-import './login.css'
+"use client";
+import React, { useState } from "react";
+import "./login.css";
 
 const Login = () => {
+  const [signIn, setSignIn] = useState({ email: "", password: "" });
+
+  const handleSigninChange = (e) => {
+    setSignIn({ ...signIn, [e.target.name]: e.target.value });
+  };
+
+  const handleSignin = (e) => {
+    e.preventDefault();
+    console.log(signIn); 
+    setSignIn({ email: "", password: "" })
+    // This will log the sign-in details to the console
+    // Here you can implement your login logic, such as sending the sign-in details to your backend
+  };
   return (
     <div className="login">
       <form className="form">
+        <p className="message">
+          <b>Login </b>
+          Get access to your Orders, Wishlist and Recommendations
+        </p>
         <div className="flex-column">
           <label>Email </label>
         </div>
@@ -21,7 +37,15 @@ const Login = () => {
               <path d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"></path>
             </g>
           </svg>
-          <input type="text" className="input" placeholder="Enter your Email"  required/>
+          <input
+            type="email"
+            className="input"
+            value={signIn.email}
+            onChange={handleSigninChange}
+            name="email"
+            placeholder="Enter your Email"
+            required
+          />
         </div>
 
         <div className="flex-column">
@@ -38,8 +62,12 @@ const Login = () => {
             <path d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path>
           </svg>
           <input
-            type="password"
+            type="text"
             className="input"
+            name="password"
+            value={signIn.password}
+            onChange={handleSigninChange}
+            
             placeholder="Enter your Password"
             required
           />
@@ -54,13 +82,12 @@ const Login = () => {
 
         <div className="flex-row">
           <div>
-            <input type="checkbox" required/>
+            <input type="checkbox" required />
             <label>Remember me </label>
           </div>
           <span className="span">Forgot password?</span>
         </div>
-        <button className="button-submit">Sign In</button>
-        
+        <button className="button-submit" onClick={handleSignin}>Sign In</button>
       </form>
     </div>
   );

@@ -1,6 +1,18 @@
+import { useState } from 'react'
 import './registration.css'
 
 export default function Registration() {
+    const[signUp, setSignUp] = useState({name:'',email:'',password:'',})
+
+    const handleChange = (e) => {
+        setSignUp({...signUp, [e.target.name]: e.target.value})
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(signUp) // This will log the sign-in details to the console
+        // Here you can implement your login logic, such as sending the sign-in details to your backend
+    }
+
   return (
   
     <div className="registration">
@@ -10,30 +22,30 @@ export default function Registration() {
     <p className="message">Signup now and get full access to our app. </p>
        
         <label>
-            <input required placeholder="" name='name' type="text" className="input"  />
+            <input required placeholder="" onChange={handleChange} value={signUp.name} name='name' type="text" className="input"  />
             <span>Fullname</span>
         </label>
 
          
             
     <label>
-        <input required placeholder="" name='email' type="email" className="input" />
+        <input required placeholder="" onChange={handleChange} value={signUp.email} name='email' type="email" className="input" />
         <span>Email</span>
     </label> 
     <label>
-        <input required placeholder="" name='number' type="text" className="input" />
+        <input required placeholder="" onChange={handleChange} value={signUp.number} name='number' type="text" className="input" />
         <span>Number</span>
     </label> 
         
     <label>
-        <input required placeholder="" name='password' type="password" className="input" />
+        <input required placeholder="" onChange={handleChange} value={signUp.password} name='password' type="password" className="input" />
         <span>Password</span>
     </label>
     <label>
         <input required placeholder="" name='cpassword' type="password" className="input" />
         <span>Confirm password</span>
     </label>
-    <button className="submit">Submit</button>
+    <button className="submit" onClick={handleSubmit}>Submit</button>
     
 </form>
     </div>

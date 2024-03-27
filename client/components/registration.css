@@ -20,7 +20,7 @@
     padding-left: 30px;
   }
   
-  .title::before,.title::after {
+  .registration .title::before,.title::after {
     position: absolute;
     content: "";
     height: 16px;
@@ -30,7 +30,7 @@
     background-color: royalblue;
   }
   
-  .title::before {
+ .registration .title::before {
     width: 18px;
     height: 18px;
     background-color: royalblue;
@@ -102,7 +102,7 @@
     color: green;
   }
   
-  .submit {
+ .registration .submit {
     border: none;
     outline: none;
     background-color: royalblue;
@@ -113,7 +113,7 @@
     transform: .3s ease;
   }
   
-  .submit:hover {
+  .registration .submit:hover {
     background-color: rgb(56, 90, 194);
   }
   

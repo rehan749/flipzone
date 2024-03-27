@@ -8,9 +8,9 @@ import { useState } from 'react'
 
 
 const Dialogbox = () => {
-  const [Showlogin, setShowLogin] = useState(true)
+  const [showLogin, setshowLogin] = useState(true)
   const toggle = () => {
-    setShowLogin(!Showlogin);
+    setshowLogin(!showLogin);
   };
   
   return (
@@ -25,13 +25,13 @@ const Dialogbox = () => {
        
        
         {
-          Showlogin? <Login/> : <Registration/>
+          showLogin? <Login/> : <Registration/>
         }
         {/* <button onClick={toggle}>
-         {Showlogin ? 'Registration' : 'Login'}
+         {showLogin ? 'Registration' : 'Login'}
       </button> */}
 
-      <p className="signin">{Showlogin ? 'New user Create an Account? ' : 'Already have an account? '}<a className="btn btn-link" onClick={toggle} style={{display:'contents'}}>{Showlogin ? 'Sign Up' : 'Sign In'}</a></p>
+      <p className="signin">{showLogin ? 'New user Create an Account? ' : 'Already have an account? '}<a className="btn btn-link" onClick={toggle} style={{display:'contents'}}>{showLogin ? 'Sign Up' : 'Sign In'}</a></p>
 
         
       </div>
