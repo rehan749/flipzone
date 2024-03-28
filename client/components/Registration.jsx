@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './registration.css'
 
 export default function Registration() {
-    const[signUp, setSignUp] = useState({name:'',email:'',password:'',})
+    const[signUp, setSignUp] = useState({name:'',email:'',number:'', password:'',})
 
     const handleChange = (e) => {
         setSignUp({...signUp, [e.target.name]: e.target.value})
@@ -17,7 +17,7 @@ export default function Registration() {
   
     <div className="registration">
 
-    <form className="form">
+    <form className="form" method='post'>
     
     <p className="message">Signup now and get full access to our app. </p>
        
