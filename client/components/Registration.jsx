@@ -13,8 +13,8 @@ export default function Registration() {
         // console.log(signUp) // This will log the sign-in details to the console
         // Here you can implement your login logic, such as sending the sign-in details to your backend
        try {
-        const data = await axios.post('http://localhost:5000/singup',signUp)
-        console.log(data)
+        const res = await axios.post('http://localhost:5000/singup',signUp)
+        console.log(res.data)
        } catch (error) {
         console.log(error)
        }
