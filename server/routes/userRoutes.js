@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../module/userModule'); // Import the User model
 
 
-router.post('/singup', async (req, res) => {
+router.post('/', async (req, res) => {
     // Access the parsed JSON data from req.body
     const data = req.body;
     try {

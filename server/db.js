@@ -10,9 +10,5 @@ const mongoUrl = process.env.MONGODB_URL;
 mongoose.connect(mongoUrl)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Error connecting to MongoDB:', err.message));
-
-// mongoose.connect('MongoUrl', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });     
+    
 module.exports = mongoose

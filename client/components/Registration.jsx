@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './registration.css'
+import axios from 'axios'
 
 export default function Registration() {
     const[signUp, setSignUp] = useState({name:'',email:'',number:'', password:'',})
@@ -7,10 +8,17 @@ export default function Registration() {
     const handleChange = (e) => {
         setSignUp({...signUp, [e.target.name]: e.target.value})
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        console.log(signUp) // This will log the sign-in details to the console
+        // console.log(signUp) // This will log the sign-in details to the console
         // Here you can implement your login logic, such as sending the sign-in details to your backend
+       try {
+        const data = await axios.post('http://localhost:5000/singup',signUp)
+        console.log(data)
+       } catch (error) {
+        console.log(error)
+       }
+   
     }
 
   return (
