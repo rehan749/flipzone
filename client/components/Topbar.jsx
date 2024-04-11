@@ -16,9 +16,12 @@ const Topbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
     <div className="container">
       <div className="col-md-3 col-lg-3 col-sm-4">
+        <Link href="/">
         <Image src={logo}  alt="logo"
       width={150}
       height={50} />
+        </Link>
+  
       </div>
       <div className="col-md-5 col-lg-5 col-sm-4 d-none d-sm-block search">
       <CiSearch />
